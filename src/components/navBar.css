@@ -1,0 +1,48 @@
+nav {
+    position: absolute;
+    top: 0;
+    background-color: #626262;
+    width: 100% ;
+    color: aliceblue;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+}
+
+nav > p {
+    font-size: 1.4rem;
+    color: aqua;
+    font-weight: 600;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav > ul > li > a {
+    color: antiquewhite;
+}
+
+nav > div {
+    display: grid;
+    place-items: center;
+    padding: 1em;
+}
+
+nav > div > p {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    background-color: blue;
+    border-radius: 50%;
+    width: 1em;
+    top: 1.5em;
+    margin-left: 3em;
+}
+
+nav > div > img {
+    max-width: 30px;
+}
