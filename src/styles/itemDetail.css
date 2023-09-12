@@ -1,0 +1,28 @@
+.productDetail {
+    border: 1px solid black;
+    padding: 1em;
+}
+.productDetail__img-container > img {
+    width: 300px;
+}
+.productDetail__body {
+    display: grid;
+}
+
+.productDetail__buttons-container {
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
+}
+.productDetail__buttons-container > button {
+    padding: .2em 2em;
+    border: none;
+    background-color: lightcoral;
+    border-radius: 5px;
+    font-weight: 700;
+}
+.productDetail__buttons-container > span {
+    font-weight: 700;
+    font-size: 1.2em;
+}

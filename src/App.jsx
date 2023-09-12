@@ -1,7 +1,10 @@
 import { useState } from 'react'
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './styles/App.css'
 import Navbar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer'
+
 
 // Los archivos que tienen que crear:
 
@@ -11,30 +14,23 @@ import ItemListContainer from './components/ItemListContainer'
 
 // ItemListContainer.jsx
 
-const Texto = ({text}) => {
-  return (
-    <div>
-      {text}
-    </div>
-  )
-}
 
-const Botton = ({callback, inenr}) => {
-  return (
-    <button onClick={callback}>
-      {inenr}
-    </button>
-  )
-} 
+
+
 
 function App() {
-  
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <Navbar />
-      <ItemListContainer text="Saludos terricolas" />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route exact path='/' element={<ItemListContainer />} />
+          <Route path='/productos/:categoria' element={<ItemListContainer />}/> 
+          <Route  path='/detalle/:producto' element={<ItemDetailContainer />} />
+        </Routes >
+      </BrowserRouter>
+      
     </>
   )
 }

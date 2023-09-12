@@ -1,0 +1,16 @@
+
+
+div > .cartCount {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    background-color: blue;
+    border-radius: 50%;
+    width: 1em;
+    top: 1.5em;
+    margin-left: 2em;
+}
+
+div > img {
+    width: 25px;
+}

@@ -1,0 +1,26 @@
+.productCard > img {
+    border: 1px solid black;
+}
+
+.productCard__text {
+    border: 1px solid red;
+    display: grid;
+    place-items: center;
+    gap: .5em;
+}
+
+.productCard__buttons {
+    display: flex;
+    border: 1px solid red;
+    padding: 1em;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.productCard__buttons > button {
+    padding: .3em 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: salmon;
+}
