@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+main {
+  height: 100%;
+  display: grid;
+  padding: 1em;
+  place-items: center;
+}
+main h1 {
+  color: #EEDD59;
+  text-align: left;
+  margin-right: 19.2em;
+}
+main section {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4, 1fr);
+}/*# sourceMappingURL=itemListContainer.css.map */

@@ -1,0 +1,16 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-family: $f-family;
+  
+}
+
+:root {
+  background-color: $dark-gray;
+}
+
+

@@ -1,51 +1,51 @@
-import productos from '../assets/productos.json'
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 import { useEffect, useState } from "react"
 import Item from './Item'
 import '../styles/loader.css'
+import '../styles/itemListContainer.scss'
 import { useParams } from 'react-router-dom'
 
 
-
-function productosMockApi() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(productos)
-        }, 500);
-    })
-}
-
 const ItemListContainer = () => {
 
-    const [prod, setProd] = useState([])
-    const {categoria} = useParams()
-    console.log(categoria)
-
+    const [prod, setProd] = useState([]);
+    const { categoria } = useParams();
+    
     useEffect(() => {
-        if(!categoria){
-            productosMockApi().then(res => setProd(res))
-        } else {
-            productosMockApi()
-                .then(res => res.filter(item => item.categoria === categoria))
-                .then(filtrado => setProd(filtrado))
-        }
+        const db = getFirestore();
+            const refProductos = categoria
+                ? query(collection(db, 'productos'), where('categoria', '==', categoria))
+                : collection(db, 'productos')
+            
+            getDocs(refProductos).then((snapshot) => {
+
+                if (snapshot.size !== 0) {
+                    setProd(
+                        snapshot.docs.map((doc) => ({
+                            ID: doc.id,
+                            ...doc.data()
+                        }))
+                    );
+                }
+            });
         
-    },['', categoria])
+    }, [categoria]);
+
+
 
     
     if(prod.length === 0) {
         return <span className="loader"></span>
     }
     return(
-        <>
-            <h1>Productos</h1>
+        <main>
+            <h1>Nuestros productos disponibles</h1>
             <section>
-                {prod.map((item) => {
-                    return (
-                        <Item key={item.ID} ID={item.ID} img={item.img} nombre={item.nombre} precio={item.precio} categoria={item.categoria} stock={item.stock}   />
-                    )
-                })}
+                {prod.map(item => (
+                    <Item key={item.ID} nombre={item.nombre} img={item.img} precio={item.precio} ID={item.ID} />
+                ))}
             </section>
-        </>
+        </main>
     )
 }
 

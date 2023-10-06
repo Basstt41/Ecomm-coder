@@ -1,16 +1,7 @@
 import ItemDetail from "./itemDetail";
-import productos from "../assets/productos.json"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
-function productosMockApi() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(productos)
-        }, 500);
-        
-    })
-}
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 
 export default function ItemDetailContainer () {
@@ -18,15 +9,23 @@ export default function ItemDetailContainer () {
     const {producto} = useParams()
 
     useEffect(() => {
-        productosMockApi()
-            .then(res => res.filter(item => item.ID == producto))
-            .then(obj => setProduc(...obj))
+        const db = getFirestore()
+        const refProducto = doc(db, 'productos', producto)
+
+        getDoc(refProducto).then(response => {
+            if(response.exists()) {
+                setProduc({ID: response.id, ...response.data()})
+            }
+        })
+        console.log(produc)
     }, [producto])
 
     const productoPros = {
+        ID: produc.ID,
         nombre: `${produc.nombre}`,
         img: `${produc.img}`,
         precio: `${produc.precio}`,
+        descripcion: `${produc.descripcion}`,
         stock: `${produc.stock}`
 }
     return (

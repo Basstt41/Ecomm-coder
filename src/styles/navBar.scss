@@ -1,0 +1,40 @@
+@import 'variables';
+nav {
+    display: flex;
+    padding: 1em;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $dark-gray;
+    a {
+        text-decoration: none;
+        color: $white;
+        &:hover {
+            color: $yellow;
+        }
+    }
+    .navOnHover {
+        color: $white;
+        cursor: pointer;
+        &:hover {
+            color: $yellow;
+        }
+        .navOnHoverContent {
+            display: none;
+            position: relative;
+        }
+
+        &:hover {
+            .navOnHoverContent {
+                width: 200px;
+                background-color: $dark-gray;
+                padding: 2em;
+                display: grid;
+                gap: 1em;
+                position: absolute;
+            }
+        }
+    }
+
+}
+
+

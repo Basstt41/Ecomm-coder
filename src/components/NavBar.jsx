@@ -9,10 +9,18 @@ const Navbar = () => {
     return (
         <nav>
             <Link to="/">Logo</Link>
-            <Link to="/productos/Remeras">Remeras</Link>
-            <Link to="/productos/Puas">Púas</Link>
-            <Link to="/productos/Discos">Discos</Link>
-            <CartWidget />
+
+            <div className='navOnHover'>
+                Productos
+                <div className='navOnHoverContent'>
+                    <Link to="/productos/remeras">Remeras</Link>
+                    <Link to="/productos/puas">Púas</Link>
+                    <Link to="/productos/discos">Discos</Link>
+                </div>
+            </div>
+            <Link to="/cart">
+                <CartWidget />
+            </Link>
         </nav>
     )
 }

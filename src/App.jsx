@@ -1,19 +1,11 @@
-import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './styles/App.css'
+import './styles/App.scss'
 import Navbar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
-
-
-// Los archivos que tienen que crear:
-
-// Navbar.jsx
-
-// CartWidget.jsx
-
-// ItemListContainer.jsx
-
+import Cart from './components/Cart'
+import { CartContexProvider } from './context/cartContext'
+import Checkout from './components/Checkout'
 
 
 
@@ -21,17 +13,19 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 function App() {
 
   return (
-    <>
+    <CartContexProvider>
       <BrowserRouter>
         <Navbar />
         <Routes>
           <Route exact path='/' element={<ItemListContainer />} />
           <Route path='/productos/:categoria' element={<ItemListContainer />}/> 
           <Route  path='/detalle/:producto' element={<ItemDetailContainer />} />
+          <Route  path='/Cart' element={<Cart />} />
+          <Route path='/checkout'element={<Checkout />}></Route>
         </Routes >
       </BrowserRouter>
       
-    </>
+    </CartContexProvider>
   )
 }
 

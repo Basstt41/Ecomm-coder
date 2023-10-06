@@ -1,13 +1,16 @@
-import ItemListContainer from "./ItemListContainer"
+import { cartContex } from "../context/cartContext"
+import cart from "../../public/cart.svg"
 import '../styles/CartWidget.css'
-
-const cartSvg = 'https://www.svgrepo.com/show/80543/shopping-cart-outline.svg'
+import { useContext } from "react"
 
 const CartWidget = () => {
+    const constextoCarrito = useContext(cartContex)
+
+    
     return (
         <div>
-            <img src={cartSvg} alt="cart-icon" />
-            <p className="cartCount">0</p>
+            <img src={cart} alt="cart-icon" />
+            <p className="cartCount">{constextoCarrito.productosEnCarrito.length}</p>
         </div>
     )
 }

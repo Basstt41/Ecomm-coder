@@ -1,21 +1,24 @@
-import { useState } from "react";
+import ItemCount from './ItemCount'
 import '../styles/itemDetail.css'
+import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { cartContex } from '../context/cartContext'
 
+// TO-DO
+// Componente con botones Finalizar compra, seguir comprando
+// Importar funcion isInCart y probarla
+// if isInCart === true => item.cantidad ??
+// else addItemTocart
 
+export default function ItemDetail({ID, nombre, img, precio, descripcion, stock}) {
+    let [productoCantidad, setProductoCantidad] = useState(null)
+    const {addItemToCart, isInCart, productosEnCarrito} = useContext(cartContex)
 
-export default function ItemDetail({nombre, img, precio, stock, categoria}) {
-    const [cantidad, setCantidad] = useState(0)
-
-    function addProd() {
-        if(cantidad < stock) {
-            setCantidad(cantidad + 1)
-        } else {alert('La cantidad seleccionada supera el stock disponible')}
+    function onAdd() {
+        const cantidad = document.getElementsByClassName('productDetail__count')
+        setProductoCantidad(productoCantidad = cantidad[0].innerHTML)
     }
-    function resProd() {
-        if(cantidad > 0) {
-            setCantidad(cantidad - 1)
-        }
-    }
+    
 
     return (
         <article className="productDetail">
@@ -24,15 +27,10 @@ export default function ItemDetail({nombre, img, precio, stock, categoria}) {
             </div>
             <div className="productDetail__body">
                 <h3>{nombre}</h3>
-                <p>Espaciio para descripcion de producto, aun no las hice</p>
+                <p>{descripcion}</p>
                 <span>${precio}</span>
-                <span>{stock}</span>
             </div>
-            <div className="productDetail__buttons-container">
-                <button onClick={resProd}>-</button>
-                <span>{cantidad}</span>
-                <button onClick={addProd}>+</button>
-            </div>
+            {productoCantidad > 0 ? <Link to='/cart'>Finalizar compra</Link> : <ItemCount stock={stock} onClick={() => {onAdd(); addItemToCart(ID, nombre, productoCantidad, img, precio)}} />} 
         </article>
     )
 } 

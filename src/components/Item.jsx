@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import '../styles/item.css'
+import '../styles/item.scss'
 import { Link } from 'react-router-dom'
 
 export default function Item({nombre, categoria, img, precio, stock, ID}) {
@@ -8,10 +7,8 @@ export default function Item({nombre, categoria, img, precio, stock, ID}) {
         <div className="productCard">
             <img src={img} alt="Imagen del producto" style={{width: 200}} />
             <div className="productCard__text">
-                <h4>{nombre}</h4>
-                <Link to={`/productos/${categoria}`}>{categoria}</Link>
+                <h3>{nombre}</h3>
                 <span>${precio}</span>
-                <span>{stock}</span>
                 <button><Link to={`/detalle/${ID}`}>Add To Cart</Link></button>
             </div>
         </div>

@@ -1,0 +1,19 @@
+@import 'variables';
+
+main {
+    height: 100%;
+    display: grid;
+    padding: 1em;
+    place-items: center;
+    h1 {
+        color: $yellow;
+        text-align: left;
+        margin-right: 19.2em;
+    }
+    section {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+}

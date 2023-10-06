@@ -1,26 +1,33 @@
-.productCard > img {
-    border: 1px solid black;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+.productCard {
+  background-color: #EEDD59;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 60% 40%;
+  height: 100%;
+  padding: 2em;
 }
-
-.productCard__text {
-    border: 1px solid red;
-    display: grid;
-    place-items: center;
-    gap: .5em;
+.productCard .productCard__text {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0.5em;
 }
-
-.productCard__buttons {
-    display: flex;
-    border: 1px solid red;
-    padding: 1em;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+.productCard .productCard__text h3 {
+  text-align: left;
 }
-
-.productCard__buttons > button {
-    padding: .3em 1em;
-    border: none;
-    border-radius: 5px;
-    background-color: salmon;
+.productCard .productCard__text span {
+  width: 100%;
+  text-align: left;
 }
+.productCard .productCard__text button {
+  padding: 0.2em 1em;
+  width: 100%;
+}
+.productCard .productCard__text button a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #21262C;
+}/*# sourceMappingURL=Item.css.map */
