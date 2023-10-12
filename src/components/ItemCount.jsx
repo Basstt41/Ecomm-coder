@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+
 export default function ItemCount({stock, onClick}) {
     const [cantidad, setCantidad] = useState(1)
 

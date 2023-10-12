@@ -29,9 +29,9 @@ export default function ItemDetailContainer () {
         stock: `${produc.stock}`
 }
     return (
-        <>
+        <main>
             <h1>Probando</h1>
             <ItemDetail {...productoPros} />
-        </>
+        </main>
     )
 }

@@ -1,0 +1,30 @@
+@import 'variables';
+
+
+.productDetail {
+    background-color: $yellow;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    .productDetail__img-container {
+        img {
+            width: 600px;
+        }
+    }
+    .productDetail__body {
+        margin: 0 3em;
+        padding: 0 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        span {
+            font-size: 1.5rem;
+            font-weight: $fw-bold;
+        }
+    }
+    .productDetail__buttons {
+        display: grid;
+        border: 1px solid black;
+    }
+}
+
