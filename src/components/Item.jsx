@@ -1,4 +1,4 @@
-import '../styles/item.scss'
+import '../styles/itemListContainer.scss'
 import { Link } from 'react-router-dom'
 
 export default function Item({nombre, categoria, img, precio, stock, ID}) {
