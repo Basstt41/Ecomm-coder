@@ -1,5 +1,5 @@
 import { cartContex } from "../context/cartContext"
-import cart from "../../public/cart.svg"
+import cart from "/cart.svg"
 import '../styles/CartWidget.css'
 import { useContext } from "react"
 

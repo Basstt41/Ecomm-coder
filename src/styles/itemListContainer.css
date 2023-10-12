@@ -7,11 +7,35 @@ main {
 }
 main h1 {
   color: #EEDD59;
-  text-align: left;
-  margin-right: 19.2em;
 }
 main section {
   display: grid;
   place-items: center;
   grid-template-columns: repeat(4, 1fr);
+}
+main section .productCard {
+  display: grid;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  background-color: #EEDD59;
+}
+main section .productCard .productCard__text {
+  display: grid;
+  gap: 0.5em;
+}
+main section .productCard .productCard__text span {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+main section .productCard .productCard__text button {
+  padding: 0.5em;
+  border: none;
+  border-radius: 5px;
+  background-color: #21262C;
+}
+main section .productCard .productCard__text button a {
+  color: #EBF4F4;
+  text-decoration: none;
 }/*# sourceMappingURL=itemListContainer.css.map */

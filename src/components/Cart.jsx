@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 
 export default function Cart() {
     const {productosEnCarrito, removeItemFromCart, clearCart} = useContext(cartContex)
-    console.log(productosEnCarrito)
     
     return (
         <>

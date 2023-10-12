@@ -1,4 +1,3 @@
-@use 'item';
 @import 'variables';
 
 main {
@@ -8,13 +7,37 @@ main {
     place-items: center;
     h1 {
         color: $yellow;
-        text-align: left;
-        margin-right: 19.2em;
+        
     }
     section {
         display: grid;
         place-items: center;
         grid-template-columns: repeat(4, 1fr);
-
+        .productCard {
+            display: grid;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            padding: 1em;
+            background-color: $yellow;
+            .productCard__text {
+                display: grid;
+                gap: .5em;
+                span {
+                    font-weight: $fw-bold;
+                    font-size: 1.5rem;
+                }
+                button {
+                    padding: .5em;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: $dark-gray;
+                    a {
+                        color: $white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
     }
 }
