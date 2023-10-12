@@ -8,7 +8,7 @@ const Navbar = () => {
     
     return (
         <nav>
-            <Link to="/">Logo</Link>
+            <Link to="/" className='logo'>Lagartoga</Link>
 
             <div className='navOnHover'>
                 Productos

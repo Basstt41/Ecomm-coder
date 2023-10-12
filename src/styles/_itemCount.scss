@@ -1,0 +1,31 @@
+@import 'variables';
+.productDetail__buttons-container {
+    display: grid;
+    gap: .5em;
+    .btn-count {
+        font-weight: $fw-bold;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        width: 100%;
+        justify-content: space-evenly;
+        span {
+            width: 100%;
+        }
+        button {
+            padding: .5em .7em;
+            border-radius: 5px;
+            font-weight: $fw-bold;
+            background-color: $dark-gray;
+            color: $white;
+        }
+    }
+    button {
+        padding: .5em .7em;
+        border-radius: 5px;
+        color: $white;
+        background-color: $dark-gray;
+    }
+}

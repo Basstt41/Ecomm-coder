@@ -1,0 +1,26 @@
+@import 'variables';
+
+.checkout {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 1em;
+    color: $yellow;
+    form {
+        padding: 1em;
+        label {
+            margin: 10px;
+        }
+        input {
+            padding: .5em;
+            border-radius: 5px;
+        }
+    }
+    button {
+        padding: .5em .7em;
+        border-radius: 5px;
+        background-color: $yellow;
+        font-weight: $fw-bold;
+        color: $dark-gray;
+    }
+}
+

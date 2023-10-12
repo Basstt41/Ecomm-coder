@@ -46,7 +46,7 @@ export default function Checkout() {
     }
     
     return (
-        <>
+        <section className="checkout">
             <h1>Completar datos</h1>
             <form>
                 
@@ -61,6 +61,6 @@ export default function Checkout() {
 
             </form>
             <button onClick={handleClick} >Finalizar</button>
-        </>
+        </section>
     )
 }

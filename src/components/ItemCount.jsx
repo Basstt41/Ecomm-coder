@@ -17,9 +17,11 @@ export default function ItemCount({stock, onClick}) {
 
     return (
         <div className="productDetail__buttons-container">
-            <button onClick={resProd}>-</button>
-            <span className="productDetail__count">{cantidad}</span>
-            <button onClick={addProd}>+</button>
+            <div className="btn-count">
+                <button onClick={resProd}>-</button>
+                <span className="productDetail__count">{cantidad}</span>
+                <button onClick={addProd}>+</button>
+            </div>
             <button className="btn-add" onClick={onClick}>Agregar al Carrito</button>
         </div>
     )

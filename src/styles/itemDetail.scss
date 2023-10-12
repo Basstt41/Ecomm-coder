@@ -22,9 +22,13 @@
             font-weight: $fw-bold;
         }
     }
-    .productDetail__buttons {
-        display: grid;
-        border: 1px solid black;
+    a {
+        text-decoration: none;
+        color: $white;
+        border-radius: 5px;
+        padding: .5em .7em;
+        background-color: $dark-gray;
+
     }
 }
 

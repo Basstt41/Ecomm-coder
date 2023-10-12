@@ -1,0 +1,44 @@
+@import 'variables';
+
+main {
+    display: grid;
+    gap: 1em;
+    div {
+        display: grid;
+        margin: .5em;
+        a {
+            text-decoration: none;
+            color: $white;
+            &:hover {
+                color: $yellow;
+            }
+        }
+
+    }
+    button {
+        padding: .5em .7em;
+        background-color: $dark-gray;
+        color: $white;
+        border-radius: 5px;
+    }
+    article {
+        background-color: $yellow;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        div {
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1em;
+            p {
+                font-weight: $fw-bold;
+                font-size: 2em;
+            }
+            
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

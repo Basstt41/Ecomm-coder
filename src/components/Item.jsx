@@ -1,7 +1,7 @@
 import '../styles/itemListContainer.scss'
 import { Link } from 'react-router-dom'
 
-export default function Item({nombre, categoria, img, precio, stock, ID}) {
+export default function Item({nombre, img, precio, ID}) {
 
     return (
         <div className="productCard">
